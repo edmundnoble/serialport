@@ -213,8 +213,16 @@ baudRateToCommSpeed :: Int -> CommSpeed
 baudRateToCommSpeed baud =
     case baud of
       (#const CBR_110) -> CS110
-      _                -> CS9600
-
+      (#const CBR_300) -> CS300
+      (#const CBR_600) -> CS600
+      (#const CBR_1200) -> CS1200
+      (#const CBR_2400) -> CS2400
+      (#const CBR_4800) -> CS4800
+      (#const CBR_9600) -> CS9600
+      (#const CBR_19200) -> CS19200
+      (#const CBR_38400) -> CS38400
+      (#const CBR_57600) -> CS57600
+      (#const CBR_115200) -> CS115200
 
 commSpeedToBaudRate :: CommSpeed -> Int
 commSpeedToBaudRate cs =
